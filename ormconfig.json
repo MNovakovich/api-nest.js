@@ -4,7 +4,12 @@
     "port": 3306,
     "username": "root",
     "password": "",
-    "database": "nestjs",
+    "database": "workingtime_app",
+    "logging":true,
     "entities": ["dist/**/*.entity{.ts,.js}"],
-    "synchronize": true
+    "synchronize": true,
+    "migrations": ["src/migrations/*{.ts,.js}s"],
+    "cli": {
+        "migrationsDir": "src/migrations"
+    }
   }

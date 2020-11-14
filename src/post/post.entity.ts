@@ -1,9 +1,11 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { PostCategory } from './enums';
 
 @Entity('posts')
 
 export class PostEntity {
-    @PrimaryGeneratedColumn('uuid') id: string;
+    @PrimaryGeneratedColumn()
+     id: string;
 
     @Column()
     title: string;
@@ -21,11 +23,12 @@ export class PostEntity {
     slug: string;
 
     @Column({ 
-        name: "category_id",
-        unsigned:true
+        type: "enum",
+        enum: [PostCategory.CODING, PostCategory.LIFESTILE, PostCategory.TEHNOLOGY],
+        //unsigned:true
        
         })
-    category: number;
+    category: PostCategory;
 
     @Column({
         default:true
@@ -33,7 +36,7 @@ export class PostEntity {
     status: boolean;
 
     @CreateDateColumn()
-    createdAt: Date;
+    createdAt: string;
 
     @Column({
         type: "datetime",

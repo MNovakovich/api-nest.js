@@ -1,5 +1,5 @@
 import { PostCategory } from '../enums'
-import {IsString, IsBoolean} from 'class-validator'
+import {IsString, IsBoolean, IsNumber, MaxLength, MinLength} from 'class-validator'
 
 export class CreatePostDto {
     @IsString()
@@ -7,7 +7,12 @@ export class CreatePostDto {
 
     @IsString()
     content: string;
-    slug: string;
+
+    @IsNumber()
+    @MaxLength(22)
+    @MinLength(4)
+    slug: number;
+    
     category?:PostCategory;
     tags?:string[];
     

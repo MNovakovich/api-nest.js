@@ -1,5 +1,4 @@
-import { Body, Controller, Delete, Get, HttpCode, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
-import { Any } from 'typeorm';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
 import { CreatePostDto, PostDto } from './dto';
 import { PostService } from './post.service';
 

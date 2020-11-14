@@ -6,13 +6,13 @@ export class CreatePostDto {
     title: string;
 
     @IsString()
-    content: string;
+    content?: string;
 
     @IsNumber()
     @MaxLength(22)
     @MinLength(4)
     slug: number;
-    
+
     category?:PostCategory;
     tags?:string[];
     

@@ -11,6 +11,7 @@ export class PostEntity {
     title: string;
 
     @Column({
+        type:'longtext',
         nullable:true
     })
     content: string;
